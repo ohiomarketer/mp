@@ -1,39 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import first from "../assets/static/main-up.jpg";
 import actions from "../assets/static/main-actions.jpg";
 import card from "../assets/static/main-card.jpg";
 import eye from "../assets/static/eye.jpg";
-import contactbar from "../assets/static/contactbar.png";
-import error from "../assets/static/error.png";
-import copy from "../assets/static/copy.png";
-
 export const Main = () => {
-  const [contactState, setContactState] = useState(false);
-  const [thirdLoader, setThirdLoader] = useState(false);
-  const [popup, setPopup] = useState(false);
-
-  const toggleContact = () => {
-    setContactState((prevContactState) => !prevContactState); // Use functional update form
-    if (!contactState) {
-      setTimeout(() => {
-        setThirdLoader(true);
-      }, 1500);
-    } else {
-      setThirdLoader(false);
-    }
-  };
-
-  const showPopup = () => {
-    setPopup(true);
-    setTimeout(() => {
-      setPopup(false);
-    }, 1000);
-  };
-
   return (
     <MainContainer>
-      <MainCard onClick={toggleContact}>
+      <MainCard>
         <FirstSection>
           <img src={first} alt="" />
         </FirstSection>
@@ -51,28 +25,6 @@ export const Main = () => {
           <img src={card} alt="" />
         </CardSection>
       </MainCard>
-      <ContactContainer className={contactState ? "active" : ""}>
-        <div className="nav" onClick={toggleContact}>
-          <img src={contactbar} alt="" />
-        </div>
-        <article className={thirdLoader ? "chota active" : "chota"}>
-          <div className="image__container">
-            <img src={error} alt="" />
-          </div>
-          <div className="text__container" onClick={showPopup}>
-            <p className="text">
-              Codigo:{" "}
-              <span className="h">
-                DPW05-UNM25B5DGV6
-                <img src={copy} alt="" />
-              </span>
-            </p>
-          </div>
-          <Popup className={popup ? "active" : ""}>
-            <p>Codigo copiado</p>
-          </Popup>
-        </article>
-      </ContactContainer>
     </MainContainer>
   );
 };

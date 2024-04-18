@@ -1,0 +1,20 @@
+import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=74fec37f"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import __vite__cjsImport1_react from "/node_modules/.vite/deps/react.js?v=74fec37f"; const React = __vite__cjsImport1_react.__esModule ? __vite__cjsImport1_react.default : __vite__cjsImport1_react;
+import __vite__cjsImport2_reactDom_client from "/node_modules/.vite/deps/react-dom_client.js?v=bcf2240a"; const createRoot = __vite__cjsImport2_reactDom_client["createRoot"];
+import App from "/src/App.jsx?t=1713298999738";
+import { initializeApp } from "/node_modules/.vite/deps/firebase_app.js?v=d9462f7f";
+import { getFirestore } from "/node_modules/.vite/deps/firebase_firestore.js?v=ee56ed2b";
+import { firebaseConfig } from "/src/firebase/config.js";
+import "/src/assets/css/index.css?t=1713297374623";
+const app = initializeApp(firebaseConfig);
+const root = createRoot(document.getElementById("root"));
+root.render(
+  /* @__PURE__ */ jsxDEV(App, {}, void 0, false, {
+    fileName: "C:/Users/santi/OneDrive/Escritorio/clientes/Davidovich/desarrollo/iphonetemple - copia/src/main.jsx",
+    lineNumber: 17,
+    columnNumber: 3
+  }, this)
+);
+export const db = getFirestore(app);
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJtYXBwaW5ncyI6IkFBZ0JHO0FBaEJILE9BQU9BLFdBQVc7QUFDbEIsU0FBU0Msa0JBQWtCO0FBQzNCLE9BQU9DLFNBQVM7QUFDaEIsU0FBU0MscUJBQXFCO0FBQzlCLFNBQVNDLG9CQUFvQjtBQUM3QixTQUFTQyxzQkFBc0I7QUFDL0IsT0FBTztBQUdQLE1BQU1DLE1BQU1ILGNBQWNFLGNBQWM7QUFHeEMsTUFBTUUsT0FBT04sV0FBV08sU0FBU0MsZUFBZSxNQUFNLENBQUM7QUFHdkRGLEtBQUtHO0FBQUFBLEVBQ0YsdUJBQUMsU0FBRDtBQUFBO0FBQUE7QUFBQTtBQUFBLFNBQUk7QUFDUDtBQUdPLGFBQU1DLEtBQUtQLGFBQWFFLEdBQUciLCJuYW1lcyI6WyJSZWFjdCIsImNyZWF0ZVJvb3QiLCJBcHAiLCJpbml0aWFsaXplQXBwIiwiZ2V0RmlyZXN0b3JlIiwiZmlyZWJhc2VDb25maWciLCJhcHAiLCJyb290IiwiZG9jdW1lbnQiLCJnZXRFbGVtZW50QnlJZCIsInJlbmRlciIsImRiIl0sInNvdXJjZXMiOlsibWFpbi5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCB7IGNyZWF0ZVJvb3QgfSBmcm9tICdyZWFjdC1kb20vY2xpZW50JztcbmltcG9ydCBBcHAgZnJvbSAnLi9BcHAuanN4JztcbmltcG9ydCB7IGluaXRpYWxpemVBcHAgfSBmcm9tICdmaXJlYmFzZS9hcHAnO1xuaW1wb3J0IHsgZ2V0RmlyZXN0b3JlIH0gZnJvbSAnZmlyZWJhc2UvZmlyZXN0b3JlJztcbmltcG9ydCB7IGZpcmViYXNlQ29uZmlnIH0gZnJvbSAnLi9maXJlYmFzZS9jb25maWcuanMnO1xuaW1wb3J0ICcuL2Fzc2V0cy9jc3MvaW5kZXguY3NzJztcblxuLy8gSW5pdGlhbGl6ZSBGaXJlYmFzZSBhcHBcbmNvbnN0IGFwcCA9IGluaXRpYWxpemVBcHAoZmlyZWJhc2VDb25maWcpO1xuXG4vLyBDcmVhdGUgYSByb290IHVzaW5nIGNyZWF0ZVJvb3RcbmNvbnN0IHJvb3QgPSBjcmVhdGVSb290KGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpO1xuXG4vLyBSZW5kZXIgdGhlIGFwcCBpbnNpZGUgdGhlIHJvb3RcbnJvb3QucmVuZGVyKFxuICAgPEFwcCAvPlxuKTtcblxuLy8gRXhwb3J0IEZpcmVzdG9yZSBpbnN0YW5jZVxuZXhwb3J0IGNvbnN0IGRiID0gZ2V0RmlyZXN0b3JlKGFwcCk7XG4iXSwiZmlsZSI6IkM6L1VzZXJzL3NhbnRpL09uZURyaXZlL0VzY3JpdG9yaW8vY2xpZW50ZXMvRGF2aWRvdmljaC9kZXNhcnJvbGxvL2lwaG9uZXRlbXBsZSAtIGNvcGlhL3NyYy9tYWluLmpzeCJ9
