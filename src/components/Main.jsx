@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import first from "../assets/static/main-up.jpg";
 import actions from "../assets/static/main-actions.jpg";
 import card from "../assets/static/main-card.jpg";
 import eye from "../assets/static/eye.jpg";
+import contactbar from "../assets/static/contactbar.png";
+import error from "../assets/static/error.png";
+import copy from "../assets/static/copy.png";
+
 export const Main = () => {
+  const [contactState, setContactState] = useState(false);
+  const [thirdLoader, setThirdLoader] = useState(false);
+  const [popup, setPopup] = useState(false);
+
+  const toggleContact = () => {
+    setContactState((prevContactState) => !prevContactState); // Use functional update form
+    if (!contactState) {
+      setTimeout(() => {
+        setThirdLoader(true);
+      }, 1500);
+    } else {
+      setThirdLoader(false);
+    }
+  };
+
+  const showPopup = () => {
+    setPopup(true);
+    setTimeout(() => {
+      setPopup(false);
+    }, 1000);
+  };
+
   return (
     <MainContainer>
-      <MainCard>
+      <MainCard onClick={toggleContact}>
         <FirstSection>
           <img src={first} alt="" />
         </FirstSection>
         <BalanceSection>
           <div className="balance__container">
-            <span className="balance">$4.900.347</span>
-            <span className="pennys">00</span>
+            <span className="balance">$9.856</span>
+            <span className="pennys">15</span>
           </div>
           <img src={eye} alt="" className="eye" />
         </BalanceSection>
@@ -25,6 +51,28 @@ export const Main = () => {
           <img src={card} alt="" />
         </CardSection>
       </MainCard>
+      <ContactContainer className={contactState ? "active" : ""}>
+        <div className="nav" onClick={toggleContact}>
+          <img src={contactbar} alt="" />
+        </div>
+        <article className={thirdLoader ? "chota active" : "chota"}>
+          <div className="image__container">
+            <img src={error} alt="" />
+          </div>
+          <div className="text__container" onClick={showPopup}>
+            <p className="text">
+              Codigo:{" "}
+              <span className="h">
+                DPW05-UNM25B5DGV6
+                <img src={copy} alt="" />
+              </span>
+            </p>
+          </div>
+          <Popup className={popup ? "active" : ""}>
+            <p>Codigo copiado</p>
+          </Popup>
+        </article>
+      </ContactContainer>
     </MainContainer>
   );
 };
@@ -40,14 +88,12 @@ const MainCard = styled.div`
   border-radius: 6px;
   padding: 15px;
   overflow: hidden;
-
 `;
 
 const FirstSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
     width: 100%;
   }
@@ -57,7 +103,6 @@ const BalanceSection = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 5px;
-
   .balance__container {
     position: relative;
     .balance {
@@ -72,7 +117,6 @@ const BalanceSection = styled.div`
       top: 4px;
     }
   }
-
   img {
     width: 33px;
     margin-left: 25px;
@@ -83,7 +127,6 @@ const ActionsSection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
     width: 100%;
   }
@@ -94,7 +137,6 @@ const CardSection = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 5px;
-
   img {
     width: 100%;
   }
@@ -103,16 +145,14 @@ const CardSection = styled.div`
 const ContactContainer = styled.div`
 position: fixed;
 top: 0;
-right: 0%;
-width: 375px;
+right: -100%;
+width: 100%;
 height: 100vh;
 background: #f6f6f6;
 transition: all 0.3s ease-in-out;
-
 &.active {
-    right: 50%;
+    right: 0%;
 }
-
 .nav {
     width: 100%;
     display: flex;
@@ -126,13 +166,10 @@ transition: all 0.3s ease-in-out;
       object-fit: cover;
     }
 }
-
 .chota {
-
     flex-direction: column;
     align-items: center;
     display: none;
-
     &.active {
         display: flex; 
         .image__container {
@@ -183,7 +220,6 @@ const Popup = styled.div`
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
   color: white;
-
   &.active {
     bottom: 20px;
   }
