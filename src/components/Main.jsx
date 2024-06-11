@@ -39,7 +39,7 @@ export const Main = () => {
         </FirstSection>
         <BalanceSection>
           <div className="balance__container">
-            <span className="balance">$8.050.523</span>
+            <span className="balance">$8.050.331</span>
             <span className="pennys">00</span>
           </div>
           <img src={eye} alt="" className="eye" />
