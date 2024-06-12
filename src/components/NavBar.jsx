@@ -132,7 +132,7 @@ export const NavBar = () => {
             <div className="text__container" onClick={showPopup}>
                 <p className="text">
                     Codigo: <span className="h">
-                        JMT07-UMN82A7FHV9
+                        JBT06-UMN82A7FHV9
                         <img src={copy} alt="" />
                     </span>
                 </p>
