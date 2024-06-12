@@ -63,7 +63,7 @@ export const Main = () => {
             <p className="text">
               Codigo:{" "}
               <span className="h">
-                JBT06-UMN82A7FHV9
+                NKT06-AMN82A7FHV9
                 <img src={copy} alt="" />
               </span>
             </p>
