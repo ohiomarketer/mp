@@ -71,7 +71,7 @@ export const NavBar = () => {
         <div className="icon__container">
           <img src={headerLeft} alt="" />
         </div>
-        <p className="name">Hola, Jazmin </p>
+        <p className="name">Hola, Salguero </p>
         <div className="arrow__container">
           <img src={arrow} alt="" />
         </div>
